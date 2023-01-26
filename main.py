@@ -174,7 +174,11 @@ def patient():
 
         flash("Booking Confirmed","info")
 
-
+    elif request.method=="GET" :
+        print("we in")
+        doct=Doctors.query.all()
+        print(doct)
+        return render_template('patient.html',doct=doct)
     return render_template('patient.html',doct=doct)
 
 
@@ -308,7 +312,7 @@ def test():
 @app.route('/details')
 @login_required
 def details():
-    posts=Trigr.query.all()
+    posts=Patients.query.all()
     # posts=db.engine.execute("SELECT * FROM `trigr`")
     return render_template('trigers.html',posts=posts)
 

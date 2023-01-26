@@ -14,7 +14,10 @@ Patients Booking
   <img src="static/images/doc.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">HOSPITAL DOCTORS</h6>
-    <p class="card-text">Doctors Names</p>
+      {% for i in doct %}
+     
+    <p class="card-text">{{i.doctorname}}</p>
+      {% endfor %}
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Cras justo odio</li>
